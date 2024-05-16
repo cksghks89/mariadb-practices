@@ -10,11 +10,11 @@ order by b.salary desc;
 
 -- 문제2.
 -- 전체 사원의 사번, 이름, 현재 직책을 이름 순서로 출력하세요.
-select a.emp_no, a.last_name, b.title
+select a.emp_no, concat(a.first_name, ' ', a.last_name) as name, b.title
 from employees a
 join titles b on a.emp_no = b.emp_no
 where b.to_date like '9999%'
-order by a.last_name asc;
+order by name asc;
 
 
 -- 문제3.
